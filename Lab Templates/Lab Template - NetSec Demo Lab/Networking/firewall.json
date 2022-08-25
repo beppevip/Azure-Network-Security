@@ -172,7 +172,7 @@
                     "*"
                   ],
                   "destinationAddresses": [
-                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddress'))).IpAddress]"
+                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('fwIpAddress'))).IpAddress]"
                   ],
                   "ruleConditionType": "NetworkRuleCondition"
                 },
@@ -198,7 +198,7 @@
                     "*"
                   ],
                   "destinationAddresses": [
-                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddress'))).IpAddress]"
+                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('fwIpAddress'))).IpAddress]"
                   ],
                   "ruleConditionType": "NetworkRuleCondition"
                 },
@@ -224,7 +224,7 @@
                     "*"
                   ],
                   "destinationAddresses": [
-                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddress'))).IpAddress]"
+                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('fwIpAddress'))).IpAddress]"
                   ],
                   "ruleConditionType": "NetworkRuleCondition"
                 },
@@ -250,7 +250,7 @@
                     "*"
                   ],
                   "destinationAddresses": [
-                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddress'))).IpAddress]"
+                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('fwIpAddress'))).IpAddress]"
                   ],
                   "ruleConditionType": "NetworkRuleCondition"
                 },
