@@ -151,9 +151,115 @@
             "[resourceId('Microsoft.Network/firewallPolicies', parameters('resourceNames').firewallPolicy)]"
           ],
           "properties": {
-            "priority": 100
+            "priority": 100,
+            "rules": [
+              {
+                "name": "APPGW-WEBAPP",
+                "priority": 100,
+                "ruleType": "FirewallPolicyNatRule",
+                "action": {
+                  "type": "Dnat"
+                },
+                "ruleCondition": {
+                  "name": "DNATRule",
+                  "ipProtocols": [
+                    "TCP"
+                  ],
+                  "destinationPorts": [
+                    "443"
+                  ],
+                  "sourceAddresses": [
+                    "*"
+                  ],
+                  "destinationAddresses": [
+                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName1'))).IpAddress]"
+                  ],
+                  "ruleConditionType": "NetworkRuleCondition"
+                },
+                "translatedAddress": "[variables('AppGateway_IPAddress')]",
+                "translatedPort": "443"
+              },
+              {
+                "name": "[variables('VM-Name1')]",
+                "priority": 101,
+                "ruleType": "FirewallPolicyNatRule",
+                "action": {
+                  "type": "Dnat"
+                },
+                "ruleCondition": {
+                  "name": "DNATRule",
+                  "ipProtocols": [
+                    "TCP"
+                  ],
+                  "destinationPorts": [
+                    "33891"
+                  ],
+                  "sourceAddresses": [
+                    "*"
+                  ],
+                  "destinationAddresses": [
+                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName1'))).IpAddress]"
+                  ],
+                  "ruleConditionType": "NetworkRuleCondition"
+                },
+                "translatedAddress": "[variables('NIC-Name1Ipaddress')]",
+                "translatedPort": "3389"
+              },
+              {
+                "name": "[variables('VM-Name2')]",
+                "priority": 102,
+                "ruleType": "FirewallPolicyNatRule",
+                "action": {
+                  "type": "Dnat"
+                },
+                "ruleCondition": {
+                  "name": "DNATRule",
+                  "ipProtocols": [
+                    "TCP"
+                  ],
+                  "destinationPorts": [
+                    "22"
+                  ],
+                  "sourceAddresses": [
+                    "*"
+                  ],
+                  "destinationAddresses": [
+                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName1'))).IpAddress]"
+                  ],
+                  "ruleConditionType": "NetworkRuleCondition"
+                },
+                "translatedAddress": "[variables('NIC-Name2Ipaddress')]",
+                "translatedPort": "22"
+              },
+              {
+                "name": "[variables('VM-Name3')]",
+                "priority": 103,
+                "ruleType": "FirewallPolicyNatRule",
+                "action": {
+                  "type": "Dnat"
+                },
+                "ruleCondition": {
+                  "name": "DNATRule",
+                  "ipProtocols": [
+                    "TCP"
+                  ],
+                  "destinationPorts": [
+                    "33890"
+                  ],
+                  "sourceAddresses": [
+                    "*"
+                  ],
+                  "destinationAddresses": [
+                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName1'))).IpAddress]"
+                  ],
+                  "ruleConditionType": "NetworkRuleCondition"
+                },
+                "translatedAddress": "[variables('NIC-Name3Ipaddress')]",
+                "translatedPort": "3389"
+              }
+            ]
           }
-        },        
+        },     
         {
           "name": "DefaultNetworkRuleCollectionGroup",
           "type": "ruleCollectionGroups",
