@@ -172,7 +172,7 @@
                     "*"
                   ],
                   "destinationAddresses": [
-                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName1'))).IpAddress]"
+                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddress'))).IpAddress]"
                   ],
                   "ruleConditionType": "NetworkRuleCondition"
                 },
