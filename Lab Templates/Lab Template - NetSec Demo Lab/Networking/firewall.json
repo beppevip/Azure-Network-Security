@@ -183,7 +183,7 @@
                 "translatedPort": "443"
               },
               {
-                "name": "[variables('VM-Name1')]",
+                "name": "[variables('win2019Vm')]",
                 "priority": 101,
                 "ruleType": "FirewallPolicyNatRule",
                 "action": {
@@ -209,7 +209,7 @@
                 "translatedPort": "3389"
               },
               {
-                "name": "[variables('VM-Name2')]",
+                "name": "[variables('kaliVm')]",
                 "priority": 102,
                 "ruleType": "FirewallPolicyNatRule",
                 "action": {
@@ -235,7 +235,7 @@
                 "translatedPort": "22"
               },
               {
-                "name": "[variables('VM-Name3')]",
+                "name": "[variables('win10Vm')]",
                 "priority": 103,
                 "ruleType": "FirewallPolicyNatRule",
                 "action": {
