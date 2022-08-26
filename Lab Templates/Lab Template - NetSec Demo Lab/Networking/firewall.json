@@ -17,6 +17,9 @@
     "win2019VmIpAddress": {
       "type": "string"
     }
+    "appGatewayIpAddress": {
+      "type": "string"
+    }
   },
   "variables": {
     "vnetDTFPrefix": "10.0.24.0/24",
@@ -176,7 +179,7 @@
                   ],
                   "ruleConditionType": "NetworkRuleCondition"
                 },
-                "translatedAddress": "[variables('AppGateway_IPAddress')]",
+                "translatedAddress": "[parameters('appGatewayIpAddress')]",
                 "translatedPort": "443"
               },
               {
@@ -202,7 +205,7 @@
                   ],
                   "ruleConditionType": "NetworkRuleCondition"
                 },
-                "translatedAddress": "[variables('NIC-Name1Ipaddress')]",
+                "translatedAddress": "[parameters('win10VmIpAddress')]",
                 "translatedPort": "3389"
               },
               {
@@ -228,7 +231,7 @@
                   ],
                   "ruleConditionType": "NetworkRuleCondition"
                 },
-                "translatedAddress": "[variables('NIC-Name2Ipaddress')]",
+                "translatedAddress": "[parameters('kaliVmIpAddress')]",
                 "translatedPort": "22"
               },
               {
@@ -254,7 +257,7 @@
                   ],
                   "ruleConditionType": "NetworkRuleCondition"
                 },
-                "translatedAddress": "[variables('NIC-Name3Ipaddress')]",
+                "translatedAddress": "[parameters('win2019VmIpAddress')]",
                 "translatedPort": "3389"
               }
             ]
