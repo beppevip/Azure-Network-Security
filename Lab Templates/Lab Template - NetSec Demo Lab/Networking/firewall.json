@@ -154,59 +154,7 @@
             "[resourceId('Microsoft.Network/firewallPolicies', parameters('resourceNames').firewallPolicy)]"
           ],
           "properties": {
-            "priority": 100,
-            "rules": [
-              {
-                "name": "APPGW-WEBAPP",
-                "priority": 100,
-                "ruleType": "FirewallPolicyNatRule",
-                "action": {
-                  "type": "Dnat"
-                },
-                "ruleCondition": {
-                  "name": "DNATRule",
-                  "ipProtocols": [
-                    "TCP"
-                  ],
-                  "destinationPorts": [
-                    "443"
-                  ],
-                  "sourceAddresses": [
-                    "*"
-                  ],
-                  "destinationAddresses": [
-                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',parameters('resourceNames').fwIpAddress)).IpAddress]"
-                  ],
-                  "ruleConditionType": "NetworkRuleCondition"
-                },
-                "translatedAddress": "[parameters('appGatewayIpAddress')]",
-                "translatedPort": "443"
-              },
-              {
-                "name": "win10vm",
-                "priority": 101,
-                "ruleType": "FirewallPolicyNatRule",
-                "action": {
-                  "type": "Dnat"
-                },
-                "ruleCondition": {
-                  "name": "DNATRule",
-                  "ipProtocols": [
-                    "TCP"
-                  ],
-                  "destinationPorts": [
-                    "33891"
-                  ],
-                  "sourceAddresses": [
-                    "*"
-                  ],
-                  "destinationAddresses": [
-                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',parameters('resourceNames').fwIpAddress)).IpAddress]"
-                  ],
-                  "ruleConditionType": "NetworkRuleCondition"
-                },
-                "translatedAddress": "[parameters('win10VmIpAddress')]",
-                "translatedPort": "3389"
+            "priority": 100
               },
               {
                 "name": "kaliVm",
