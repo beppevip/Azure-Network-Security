@@ -155,62 +155,8 @@
           ],
           "properties": {
             "priority": 100
-              },
-              {
-                "name": "kaliVm",
-                "priority": 102,
-                "ruleType": "FirewallPolicyNatRule",
-                "action": {
-                  "type": "Dnat"
-                },
-                "ruleCondition": {
-                  "name": "DNATRule",
-                  "ipProtocols": [
-                    "TCP"
-                  ],
-                  "destinationPorts": [
-                    "22"
-                  ],
-                  "sourceAddresses": [
-                    "*"
-                  ],
-                  "destinationAddresses": [
-                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',parameters('resourceNames').fwIpAddress)).IpAddress]"
-                  ],
-                  "ruleConditionType": "NetworkRuleCondition"
-                },
-                "translatedAddress": "[parameters('kaliVmIpAddress')]",
-                "translatedPort": "22"
-              },
-              {
-                "name": "win2019Vm",
-                "priority": 103,
-                "ruleType": "FirewallPolicyNatRule",
-                "action": {
-                  "type": "Dnat"
-                },
-                "ruleCondition": {
-                  "name": "DNATRule",
-                  "ipProtocols": [
-                    "TCP"
-                  ],
-                  "destinationPorts": [
-                    "33890"
-                  ],
-                  "sourceAddresses": [
-                    "*"
-                  ],
-                  "destinationAddresses": [
-                    "[reference(resourceId('Microsoft.Network/publicIPAddresses',parameters('resourceNames').fwIpAddress)).IpAddress]"
-                  ],
-                  "ruleConditionType": "NetworkRuleCondition"
-                },
-                "translatedAddress": "[parameters('win2019VmIpAddress')]",
-                "translatedPort": "3389"
-              }
-            ]
-          }
-        },     
+             }
+          },
         {
           "name": "DefaultNetworkRuleCollectionGroup",
           "type": "ruleCollectionGroups",
