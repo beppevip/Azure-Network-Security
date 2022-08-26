@@ -233,6 +233,9 @@
           },
           "win2019VmIpAddress": {
             "value": "[parameters('win2019VmIpAddress')]"
+          },
+          "appGatewayIpAddress": {
+            "value": "[parameters('appGatewayIpAddress')]"
           }
         }
       }
