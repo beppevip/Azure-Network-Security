@@ -54,12 +54,7 @@
       "dependsOn": [
         "[concat('Microsoft.Network/networkInterfaces/', parameters('resourceNames').kaliVm, '-nic')]"
       ],
-      //"plan": {
-        //"name": "kali",
-        //"publisher": "kali-linux",
-        //"product": "UbuntuServer"
-      //},
-      "properties": {
+        "properties": {
         "hardwareProfile": {
           "vmSize": "Standard_B4ms"
         },
