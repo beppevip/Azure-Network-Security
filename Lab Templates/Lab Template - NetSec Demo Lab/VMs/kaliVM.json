@@ -54,11 +54,11 @@
       "dependsOn": [
         "[concat('Microsoft.Network/networkInterfaces/', parameters('resourceNames').kaliVm, '-nic')]"
       ],
-      "plan": {
-        "name": "kali",
-        "publisher": "kali-linux",
-        "product": "kali-linux"
-      },
+      //"plan": {
+        //"name": "kali",
+        //"publisher": "kali-linux",
+        //"product": "UbuntuServer"
+      //},
       "properties": {
         "hardwareProfile": {
           "vmSize": "Standard_B4ms"
@@ -72,10 +72,10 @@
             }
           },
           "imageReference": {
-            "publisher": "kali-linux",
-            "offer": "kali",
-            "sku": "kali",
-            "version": "2022.3.0"
+            "publisher": "Canonical",
+            "offer": "UbuntuServer",
+            "sku": "18.04-LTS",
+            "version": "latest"
           }
         },
         "networkProfile": {
