@@ -73,9 +73,9 @@
           },
           "imageReference": {
             "publisher": "kali-linux",
-            "offer": "kali-linux",
+            "offer": "kali",
             "sku": "kali",
-            "version": "2019.2.0"
+            "version": "2022.3.0"
           }
         },
         "networkProfile": {
